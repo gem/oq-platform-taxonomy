@@ -1,0 +1,8 @@
+include LICENSE
+include README.rst
+recursive-include openquakeplatform_taxonomy *.py
+recursive-include openquakeplatform_taxonomy/management *
+recursive-include openquakeplatform_taxonomy/static *
+recursive-include openquakeplatform_taxonomy/templates *
+recursive-include openquakeplatform_taxonomy/test *
+
