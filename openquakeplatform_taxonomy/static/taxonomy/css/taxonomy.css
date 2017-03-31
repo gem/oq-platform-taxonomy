@@ -1,0 +1,21 @@
+div.gloss_body {
+    margin-top: 16px;
+    font-size: 15pt;
+    line-height: 18pt;
+    display: none;
+}
+
+button.gloss_head {
+    font-size: 15pt;
+    margin: 2px;
+}
+
+div.gloss_body li {
+    line-height: 18pt;
+}
+
+div.content_body {
+    font-size: 15pt;
+    line-height: 18pt;
+}
+

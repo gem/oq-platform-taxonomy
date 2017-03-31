@@ -1,0 +1,52 @@
+<!--
+Copyright (c) 2015-2016 GEM Foundation
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/agpl.html>.
+-->
+
+{% extends "site_base.html" %}
+{% load i18n %}
+
+{% block title %} Taxonomy - {{ title }} {% endblock title %}
+
+{% block extra_head %}
+{{block.super}}
+    <link href="{{ STATIC_URL }}taxonomy/css/taxonomy.css" rel="stylesheet"/>
+{% endblock extra_head %}
+
+
+{% block body %}
+{% include "taxonomy/table.html" %}
+<div class="content_body">
+  {{ cont|safe }}
+  </div>
+{% endblock body %}
+
+{% block extra_script %}
+{{block.super}}
+<script>
+  function gloss_head_cb(e)
+  {
+      var letter = e.target.getAttribute('data_letter');
+      var new_page = window.location.href.substr(0,window.location.href.lastIndexOf('/') + 1);
+      new_page = new_page + '?id=' + letter;
+      window.location = new_page;
+  }
+
+  window.onload = function() {
+      $('button.gloss_head').click(gloss_head_cb);
+  }
+</script>
+
+{% endblock extra_script %}
