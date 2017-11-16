@@ -17,14 +17,13 @@
 # along with OpenQuake. If not, see <http://www.gnu.org/licenses/>.
 
 import unittest
-
-from openquakeplatform.test import pla
+from openquake.moon import platform_get
 
 
 class TaxonomyTest(unittest.TestCase):
 
     def content_test(self):
-
+        pla = platform_get()
         pla.get('/taxonomy')
 
         letterlink = pla.xpath_finduniq(
@@ -53,4 +52,3 @@ class TaxonomyTest(unittest.TestCase):
 
         pla.xpath_finduniq(
             "//h2[normalize-space(text())='Ground floor']")
-
