@@ -25,7 +25,7 @@ from openquakeplatform_taxonomy import views
 # from django.contrib import admin
 # admin.autodiscover()
 
-
+app_name = 'taxonomy'
 urlpatterns = [
     url(r'^(?P<pg>[a-zA-Z0-9_-]+)?$', views.taxonomy, name='home'),
 ]
