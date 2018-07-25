@@ -18,20 +18,22 @@
 
 import os
 from django.shortcuts import render
-from django.template import RequestContext
 import openquakeplatform_taxonomy
 
 
 def taxonomy(request, pg=None, **kwargs):
     if pg:
-        cont_f = os.path.join(os.path.dirname(openquakeplatform_taxonomy.__file__), 'data', pg + '.html')
-        
-        with open(cont_f, 'r') as f:
+        cont_f = os.path.join(os.path.dirname(
+            openquakeplatform_taxonomy.__file__), 'data', pg + '.html')
+
+        with open(cont_f, 'r', encoding='utf-8') as f:
             cont = f.read()
-            title = cont.split('\n', 1)[0].replace('<h2>', '').replace('</h2>', '').replace('\n', '')
+            title = cont.split('\n', 1)[0].replace(
+                '<h2>', '').replace('</h2>', '').replace('\n', '')
 
             cont = cont.replace(' src="img/', ' src="/static/taxonomy/img/')
-            return render(request, "taxonomy/taxonomy.html", dict(title=title, cont=cont))
+            return render(request, "taxonomy/taxonomy.html",
+                          dict(title=title, cont=cont))
     else:
         id = request.GET.get('id', '')
         return render(request, "taxonomy/index.html", dict(id=id))
