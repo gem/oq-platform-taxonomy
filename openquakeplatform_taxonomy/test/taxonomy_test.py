@@ -36,7 +36,7 @@ class TaxonomyTest(unittest.TestCase):
         termlink.click()
 
         pla.wait_new_page(termlink, '/taxonomy/height-of-ground-floor-level-above'
-                                    '-grade--hf', timeout=5)
+                          '-grade-hf', timeout=5)
 
         img = pla.xpath_finduniq(
             "//img[@alt='HF_diagram_-_1']")
