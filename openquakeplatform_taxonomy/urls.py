@@ -18,7 +18,7 @@
 
 from django.conf import settings
 
-from django.conf.urls import re_path
+from django.urls import re_path
 from openquakeplatform_taxonomy import views
 
 # Uncomment the next two lines to enable the admin:
