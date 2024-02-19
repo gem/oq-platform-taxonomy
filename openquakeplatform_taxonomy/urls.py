@@ -18,7 +18,7 @@
 
 from django.conf import settings
 
-from django.conf.urls import url
+from django.conf.urls import re_path
 from openquakeplatform_taxonomy import views
 
 # Uncomment the next two lines to enable the admin:
@@ -27,5 +27,5 @@ from openquakeplatform_taxonomy import views
 
 app_name = 'taxonomy'
 urlpatterns = [
-    url(r'^(?P<pg>[a-zA-Z0-9_-]+)?$', views.taxonomy, name='home'),
+    re_path(r'^(?P<pg>[a-zA-Z0-9_-]+)?$', views.taxonomy, name='home'),
 ]

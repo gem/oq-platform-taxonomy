@@ -20,7 +20,7 @@ setup(
     author='GEM Foundation',
     author_email='devops@openquake.org',
     install_requires=[
-        'django >=1.5, <4',
+        'django >=1.5, <5',
     ],
     classifiers=[
         'Environment :: Web Environment',
