@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools >= 64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oq-platform-oq-platform-taxonomy"
+version="1.1"
+description = "Taxtonomy - GEM building taxonomy glossary"
+readme = "README.md"
+license = { text = "AGPL-3.0-only" }
+requires-python = ">=3.10"
+
+authors = [
+    { name = "GEM Foundation", email = "devops@openquake.org" },
+]
+maintainers = [
+    {name = "GEM Foundation", email = "devops@openquake.org"},
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Scientists",
+    "License :: OSI Approved :: AGPL3",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+dependencies = [ "django >=4.2, <5", ]
+[project.urls]
+Homepage = "https://github.com/gem/oq-platform-taxonomy"
+[tool.setuptools]
+packages = [ "openquakeplatform_taxonomy" ]
