@@ -4,7 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "oq-platform-oq-platform-taxonomy"
-version="1.1"
 description = "Taxtonomy - GEM building taxonomy glossary"
 readme = "README.md"
 license = { text = "AGPL-3.0-only" }
@@ -28,7 +27,10 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]
 dependencies = [ "django >=4.2, <5", ]
+dynamic = [ "version", ]
 [project.urls]
 Homepage = "https://github.com/gem/oq-platform-taxonomy"
 [tool.setuptools]
 packages = [ "openquakeplatform_taxonomy" ]
+[tool.setuptools.dynamic]
+version = {attr = "openquakeplatform_taxonomy.__version__"}
