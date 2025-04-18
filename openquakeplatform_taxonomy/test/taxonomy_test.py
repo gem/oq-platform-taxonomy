@@ -24,7 +24,7 @@ class TaxonomyTest(unittest.TestCase):
 
     def content_test(self):
         pla = platform_get()
-        pla.get('/taxonomy')
+        pla.get('/glossary')
 
         letterlink = pla.xpath_finduniq(
             "//button[@data_letter='H']")
@@ -35,7 +35,7 @@ class TaxonomyTest(unittest.TestCase):
             " floor level above grade [HF]']")
         termlink.click()
 
-        pla.wait_new_page(termlink, '/taxonomy/height-of-ground-floor-level-above'
+        pla.wait_new_page(termlink, '/glossary/height-of-ground-floor-level-above'
                           '-grade-hf', timeout=5)
 
         img = pla.xpath_finduniq(

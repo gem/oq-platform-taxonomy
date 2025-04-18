@@ -31,9 +31,9 @@ def taxonomy(request, pg=None, **kwargs):
             title = cont.split('\n', 1)[0].replace(
                 '<h2>', '').replace('</h2>', '').replace('\n', '')
 
-            cont = cont.replace(' src="img/', ' src="/static/taxonomy/img/')
-            return render(request, "taxonomy/taxonomy.html",
+            cont = cont.replace(' src="img/', ' src="/static/gem_glossary/img/')
+            return render(request, "gem_glossary/taxonomy.html",
                           dict(title=title, cont=cont))
     else:
         id = request.GET.get('id', '')
-        return render(request, "taxonomy/index.html", dict(id=id))
+        return render(request, "gem_glossary/index.html", dict(id=id))
